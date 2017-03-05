@@ -17,65 +17,49 @@ import static jdk.nashorn.tools.ShellFunctions.input;
 
 public class Aluno {
    
-    public String Nome; 
-    public double Nota;  
-    public int  Contato;
-
-    public Aluno() {
-    inserir();
+    private String nome;
+    private int nota;
+    private String contacto;
+    
+    public Aluno(){
+        setAluno("Peter", 100, 965022465);
+        setAluno("frank", 50.5, 965022465);
+        setAluno("ralf", 22.6, 965022465);
+        setAluno("lary", 10, 965022465);
+        setAluno("kast", 52, 965022465);
     }
-        
-
-    public Aluno(String Nome, double Nota, int Contato) {
-         this.Nome = Nome;
-      this.Nota = Nota;
-      this.Contato = Contato;
-        
-        
-        
-    }
-
-    public void setNome(String Nome) {
-        this.Nome = Nome;
-    }
-
-    public void setNota(double Nota) {
-        this.Nota = Nota;
-    }
-
-    public void setContato(int Contato) {
-        this.Contato = Contato;
-    }
-
+    
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public double getNota() {
-        return Nota;
+    public int getNota() {
+        return nota;
     }
 
-    public int getContato() {
-        return Contato;
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setAluno(String nome,int nota,String contacto){
+        this.nome=nome;
+        this.nota=nota;
+        this.contacto=contacto;
+        nAluno.add(getNome()+" | "+getNota()+" | "+getContacto());
     }
     
-    public void inserir(){
-    ArrayList student = new ArrayList();
-    student.add(0, new Aluno("Peter", 100, 965022465));
-    student.add(1, new Aluno("frank", 50.5, 965022465));
-    student.add(2, new Aluno("ralf", 22.6, 965022465));
-    student.add(3, new Aluno("lary", 10, 965022465));
-    student.add(4, new Aluno("kast", 52, 965022465));
+    ArrayList<Object> nAluno= new ArrayList<>();    
+            
+    public void ordenar(){
+        ArrayList temp = new ArrayList();
+        for(int i=0;i<nAluno.size();i++){
+            System.out.println(nAluno.get(i));
+        }
+    }
+ 
     
-    Iterator it = student.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        
+    
+    
+    
     
     }
-    
-    
-    
-    
-    
-    }}
