@@ -27,6 +27,7 @@ public class Aluno {
         setAluno("ralf", 22.6, 965022465);
         setAluno("lary", 10, 965022465);
         setAluno("kast", 52, 965022465);
+       ordenar();
     }
     
     public String getNome() {
